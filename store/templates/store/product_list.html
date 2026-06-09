@@ -1,3 +1,38 @@
 {% extends 'store/base.html' %}{% block title %}Shop | Zymaya{% endblock %}{% block content %}
-<section class="shop-layout"><aside class="filters"><h3>Categories</h3><a class="filter-link{% if not active_category %} active{% endif %}" href="{% url 'store:product_list' %}">All</a>{% for category in categories %}<a class="filter-link{% if active_category == category %} active{% endif %}" href="{{ category.get_absolute_url }}">{{ category.name }}</a>{% endfor %}</aside><div>{% include 'store/includes/product_grid.html' with products=products %}</div></section>
+<section class="shop-layout"><button class="filters-toggle">Categories ☰</button><aside class="filters"><h3>Categories</h3><a class="filter-link{% if not active_category %} active{% endif %}" href="{% url 'store:product_list' %}">All</a>{% for category in categories %}<a class="filter-link{% if active_category == category %} active{% endif %}" href="{{ category.get_absolute_url }}">{{ category.name }}</a>{% endfor %}</aside><div id="products-container">{% include 'store/includes/product_grid.html' with products=products %}</div><button id="load-more-btn" class="load-more-btn">Load More</button></section>
+<script>
+document.querySelector('.filters-toggle').addEventListener('click', function() {
+  var filters = document.querySelector('.filters');
+  filters.classList.toggle('show');
+  this.textContent = filters.classList.contains('show') ? 'Categories ✕' : 'Categories ☰';
+});
+
+var page = 2;
+var categorySlug = '{{ active_category.slug|default:"" }}';
+var loadMoreBtn = document.getElementById('load-more-btn');
+var baseUrl = '{% if active_category %}{% url "store:product_list_by_category" active_category.slug %}{% else %}{% url "store:product_list" %}{% endif %}';
+
+function loadMore() {
+  var url = baseUrl + (baseUrl.includes('?') ? '&' : '?') + 'page=' + page;
+
+  fetch(url, {
+    headers: {'X-Requested-With': 'XMLHttpRequest'}
+  })
+  .then(r => r.json())
+  .then(data => {
+    document.getElementById('products-container').insertAdjacentHTML('beforeend', data.html);
+    page++;
+    if (!data.has_more) {
+      loadMoreBtn.style.display = 'none';
+    }
+  })
+  .catch(err => console.error('Load more error:', err));
+}
+
+loadMoreBtn.addEventListener('click', loadMore);
+
+if (!('{{ total_products }}' > 3)) {
+  loadMoreBtn.style.display = 'none';
+}
+</script>
 {% endblock %}

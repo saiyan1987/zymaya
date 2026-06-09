@@ -1,5 +1,7 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.http import require_POST
+from django.http import JsonResponse
+from django.template.loader import render_to_string
 from .cart import Cart
 from .forms import CheckoutForm
 from .models import Category, OrderItem, Product, ProductVariant
@@ -16,7 +18,21 @@ def product_list(request, category_slug=None):
     if category_slug:
         active_category=get_object_or_404(Category, slug=category_slug)
         products=products.filter(category=active_category)
-    return render(request,'store/product_list.html',{'categories':categories,'products':products,'active_category':active_category})
+
+    page=int(request.GET.get('page', 1))
+    per_page=3
+    start=(page-1)*per_page
+    end=start+per_page
+
+    paginated_products=list(products[start:end])
+    total_products=products.count()
+    has_more=end<total_products
+
+    if request.headers.get('X-Requested-With')=='XMLHttpRequest':
+        html=render_to_string('store/includes/product_grid.html', {'products':paginated_products})
+        return JsonResponse({'html':html, 'has_more':has_more})
+
+    return render(request,'store/product_list.html',{'categories':categories,'products':paginated_products,'active_category':active_category,'total_products':total_products})
 
 def product_detail(request, slug):
     product=get_object_or_404(Product.objects.prefetch_related('variants'), slug=slug, is_active=True)
