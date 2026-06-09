@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.http import require_POST
 from django.http import JsonResponse
 from django.template.loader import render_to_string
+from django.db.models import Q
 from .cart import Cart
 from .forms import CheckoutForm
 from .models import Category, OrderItem, Product, ProductVariant
@@ -15,6 +16,11 @@ def product_list(request, category_slug=None):
     categories=Category.objects.all()
     products=Product.objects.filter(is_active=True).select_related('category').prefetch_related('variants')
     active_category=None
+    search_query=request.GET.get('search', '')
+
+    if search_query:
+        products=products.filter(Q(name__icontains=search_query) | Q(description__icontains=search_query) | Q(brand__icontains=search_query))
+
     if category_slug:
         active_category=get_object_or_404(Category, slug=category_slug)
         products=products.filter(category=active_category)
@@ -32,7 +38,7 @@ def product_list(request, category_slug=None):
         html=render_to_string('store/includes/product_grid.html', {'products':paginated_products})
         return JsonResponse({'html':html, 'has_more':has_more})
 
-    return render(request,'store/product_list.html',{'categories':categories,'products':paginated_products,'active_category':active_category,'total_products':total_products})
+    return render(request,'store/product_list.html',{'categories':categories,'products':paginated_products,'active_category':active_category,'total_products':total_products,'search_query':search_query})
 
 def product_detail(request, slug):
     product=get_object_or_404(Product.objects.prefetch_related('variants'), slug=slug, is_active=True)

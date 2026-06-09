@@ -10,6 +10,10 @@
 <header class="site-header">
   <a class="brand" href="{% url 'store:home' %}">ZYMAYA</a>
   <nav class="nav"><a href="{% url 'store:home' %}">Home</a><a href="{% url 'store:product_list' %}">Shop</a><a href="/shop/category/bags/">Bags</a><a href="/shop/category/shoes/">Shoes</a><a href="/shop/category/clothing/">Clothing</a></nav>
+  <form class="search-form" method="get" action="{% url 'store:product_list' %}">
+    <input type="text" name="search" placeholder="Search products..." value="{{ search_query|default:'' }}">
+    <button type="submit"><i class="fas fa-search"></i></button>
+  </form>
   <a class="cart-link" href="{% url 'store:cart_detail' %}">Cart <span>{{ cart|length }}</span></a>
 </header>
 {% if messages %}<div class="messages">{% for message in messages %}<p>{{ message }}</p>{% endfor %}</div>{% endif %}
