@@ -1,0 +1,1 @@
+{% extends 'store/base.html' %}{% block content %}<section class="page-hero"><p class="eyebrow">Thank you</p><h1>Order Received</h1><p>Your demo order number is #{{ order_id }}.</p><a class="btn dark" href="{% url 'store:product_list' %}">Continue Shopping</a></section>{% endblock %}

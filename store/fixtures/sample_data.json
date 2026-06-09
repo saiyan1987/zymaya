@@ -1,0 +1,405 @@
+[
+  {
+    "model": "store.category",
+    "pk": 1,
+    "fields": {
+      "name": "Bags",
+      "slug": "bags",
+      "image_label": "Bags"
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 2,
+    "fields": {
+      "name": "Shoes",
+      "slug": "shoes",
+      "image_label": "Shoes"
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 3,
+    "fields": {
+      "name": "Clothing",
+      "slug": "clothing",
+      "image_label": "Clothing"
+    }
+  },
+  {
+    "model": "store.category",
+    "pk": 4,
+    "fields": {
+      "name": "Slippers",
+      "slug": "slippers",
+      "image_label": "Slippers"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "name": "Chanel Classic Flap Style Bag",
+      "slug": "bags",
+      "brand": "Chanel",
+      "description": "A timeless quilted shoulder bag with gold-tone detailing.",
+      "base_price": "1850.00",
+      "image": "",
+      "colour": "",
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2026-06-09T12:00:00Z"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 11,
+    "fields": {
+      "product": 1,
+      "size": "One Size",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-1-1"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 2,
+    "fields": {
+      "category": 1,
+      "name": "Dior Inspired Tote",
+      "slug": "bags",
+      "brand": "Dior",
+      "description": "Structured canvas tote with luxury boutique styling.",
+      "base_price": "950.00",
+      "image": "",
+      "colour": "",
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2026-06-09T12:00:00Z"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 21,
+    "fields": {
+      "product": 2,
+      "size": "One Size",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-2-1"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 3,
+    "fields": {
+      "category": 4,
+      "name": "Gucci Princetown Style Slippers",
+      "slug": "gucci-princetown-style-slippers",
+      "brand": "Gucci",
+      "description": "Elegant leather mule slippers for everyday luxury.",
+      "base_price": "420.00",
+      "image": "",
+      "colour": "",
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2026-06-09T12:00:00Z"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 31,
+    "fields": {
+      "product": 3,
+      "size": "UK 5",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-3-1"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 32,
+    "fields": {
+      "product": 3,
+      "size": "UK 6",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-3-2"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 33,
+    "fields": {
+      "product": 3,
+      "size": "UK 7",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-3-3"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 34,
+    "fields": {
+      "product": 3,
+      "size": "UK 8",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-3-4"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 4,
+    "fields": {
+      "category": 2,
+      "name": "Louboutin Style Heels",
+      "slug": "louboutin-style-heels",
+      "brand": "Christian Louboutin",
+      "description": "Statement evening heels with premium finish.",
+      "base_price": "690.00",
+      "image": "",
+      "colour": "",
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2026-06-09T12:00:00Z"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 41,
+    "fields": {
+      "product": 4,
+      "size": "UK 4",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-4-1"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 42,
+    "fields": {
+      "product": 4,
+      "size": "UK 5",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-4-2"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 43,
+    "fields": {
+      "product": 4,
+      "size": "UK 6",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-4-3"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 44,
+    "fields": {
+      "product": 4,
+      "size": "UK 7",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-4-4"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 5,
+    "fields": {
+      "category": 3,
+      "name": "Cashmere Longline Coat",
+      "slug": "cashmere-longline-coat",
+      "brand": "Max Mara",
+      "description": "Minimal longline coat with soft luxury feel.",
+      "base_price": "780.00",
+      "image": "",
+      "colour": "",
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2026-06-09T12:00:00Z"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 51,
+    "fields": {
+      "product": 5,
+      "size": "S",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-5-1"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 52,
+    "fields": {
+      "product": 5,
+      "size": "M",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-5-2"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 53,
+    "fields": {
+      "product": 5,
+      "size": "L",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-5-3"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 6,
+    "fields": {
+      "category": 3,
+      "name": "Silk Evening Dress",
+      "slug": "silk-evening-dress",
+      "brand": "Zymaya",
+      "description": "Elegant occasionwear piece for special events.",
+      "base_price": "350.00",
+      "image": "",
+      "colour": "",
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2026-06-09T12:00:00Z"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 61,
+    "fields": {
+      "product": 6,
+      "size": "S",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-6-1"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 62,
+    "fields": {
+      "product": 6,
+      "size": "M",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-6-2"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 63,
+    "fields": {
+      "product": 6,
+      "size": "L",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-6-3"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 7,
+    "fields": {
+      "category": 2,
+      "name": "Hermes Oran Style Sandals",
+      "slug": "hermes-oran-style-sandals",
+      "brand": "Hermes",
+      "description": "Iconic flat sandal silhouette in neutral leather.",
+      "base_price": "510.00",
+      "image": "",
+      "colour": "",
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2026-06-09T12:00:00Z"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 71,
+    "fields": {
+      "product": 7,
+      "size": "UK 4",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-7-1"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 72,
+    "fields": {
+      "product": 7,
+      "size": "UK 5",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-7-2"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 73,
+    "fields": {
+      "product": 7,
+      "size": "UK 6",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-7-3"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 74,
+    "fields": {
+      "product": 7,
+      "size": "UK 7",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-7-4"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 8,
+    "fields": {
+      "category": 1,
+      "name": "Luxury Crossbody Bag",
+      "slug": "luxury-crossbody-bag",
+      "brand": "YSL",
+      "description": "Compact evening crossbody with chain strap.",
+      "base_price": "875.00",
+      "image": "",
+      "colour": "",
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2026-06-09T12:00:00Z"
+    }
+  },
+  {
+    "model": "store.productvariant",
+    "pk": 81,
+    "fields": {
+      "product": 8,
+      "size": "One Size",
+      "price": null,
+      "stock": 3,
+      "sku": "ZYM-8-1"
+    }
+  }
+]

@@ -1,0 +1,3 @@
+{% extends 'store/base.html' %}{% block title %}Checkout | Zymaya{% endblock %}{% block content %}
+<section class="page-hero"><p class="eyebrow">Checkout</p><h1>Delivery Details</h1></section><section class="form-page"><form method="post" class="checkout-form">{% csrf_token %}{{ form.as_p }}<button class="btn dark" type="submit">Place Demo Order</button></form></section>
+{% endblock %}
