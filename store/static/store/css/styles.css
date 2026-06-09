@@ -526,7 +526,6 @@ a {
 
   main {
     flex-direction: column;
-    overflow-y: auto;
   }
 
   .page-hero {

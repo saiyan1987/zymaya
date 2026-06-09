@@ -1,3 +1,5 @@
-<div class="product-grid">{% for product in products %}
-<a class="product-card" href="{{ product.get_absolute_url }}"><div class="product-image">{% if product.image %}<img src="{{ product.image.url }}" alt="{{ product.name }}">{% else %}<span>{{ product.category.name }}</span>{% endif %}</div><div class="product-info"><p class="brand-name">{{ product.brand|default:'Zymaya' }}</p><h3>{{ product.name }}</h3><p class="price">£{{ product.base_price }}</p></div></a>
-{% empty %}<p>No products yet.</p>{% endfor %}</div>
+<div class="product-grid">
+{% for product in products %}
+    <a class="product-card" href="{{ product.get_absolute_url }}"><div class="product-image">{% if product.image %}<img src="{{ product.image.url }}" alt="{{ product.name }}">{% else %}<span>{{ product.category.name }}</span>{% endif %}</div><div class="product-info"><p class="brand-name">{{ product.brand|default:'Zymaya' }}</p><h3>{{ product.name }}</h3><p class="price">£{{ product.base_price }}</p></div></a>
+    {% empty %}<p>No products yet.</p>
+{% endfor %}</div>
