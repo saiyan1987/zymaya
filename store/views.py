@@ -20,7 +20,7 @@ def product_list(request, category_slug=None):
         products=products.filter(category=active_category)
 
     page=int(request.GET.get('page', 1))
-    per_page=3
+    per_page=int(request.GET.get('per_page', 12))
     start=(page-1)*per_page
     end=start+per_page
 
