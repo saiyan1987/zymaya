@@ -99,8 +99,8 @@ a {
   padding: 30px;
   border-radius: 4px;
   z-index: 1000;
-  width: 90%;
-  max-width: 400px;
+  width: calc(100% - 40px);
+  max-width: 350px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
