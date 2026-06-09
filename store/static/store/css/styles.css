@@ -15,15 +15,17 @@ body {
   margin: 0;
   font-family: Poppins, Arial, sans-serif;
   color: var(--black);
-  background: #f5f5f5;
+  background: #111;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 main {
   flex: 1;
   display: flex;
+  background: #f5f5f5;
 }
 
 a {
@@ -402,16 +404,19 @@ a {
 .footer {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 30px;
   background: #111;
   color: #fff;
-  padding: 0px 5vw;
+  padding: 0 5vw;
+  height: 78px;
+  flex-shrink: 0;
 }
 
 .footer h2 {
   font-family: 'Cormorant Garamond', serif;
   letter-spacing: 7px;
+  margin-bottom: 3px;
 }
 
 .social-icon {
@@ -497,12 +502,16 @@ a {
   }
 
   .hero-simple {
-    padding: 20px;
-    min-height: auto;
+    padding: 120px 20px 20px 20px;
+    text-align: center;
+    align-items: flex-start;
+    justify-items: center;
   }
 
   .hero-copy {
-    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
   }
 
   .hero-copy h1 {
@@ -516,14 +525,35 @@ a {
     margin-bottom: 20px;
   }
 
+  main {
+    flex-direction: column;
+  }
+
+  .page-hero {
+    padding: 40px 15px;
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .page-hero h1 {
+    font-size: 32px;
+    margin: 10px 0;
+  }
+
+  .form-page {
+    width: 100%;
+    flex-basis: auto;
+  }
+
   .eyebrow {
     font-size: 11px;
     margin-top: 0;
   }
 
   .btn {
-    padding: 12px 24px;
-    font-size: 11px;
+    padding: 16px;
+    font-size: 13px;
+    width: 100%;
   }
 
   .compact-section {
@@ -570,6 +600,7 @@ a {
     display: none;
     padding: 12px 15px;
     margin: 0;
+    background: #111;
   }
 
   .filters.show {
@@ -589,6 +620,7 @@ a {
     padding: 20px 15px;
     gap: 15px;
     flex-direction: column;
+    height: auto;
   }
 
   .footer h2 {
@@ -599,5 +631,58 @@ a {
   .footer p {
     font-size: 12px;
     margin: 5px 0;
+  }
+
+  .cart-page,
+  .form-page {
+    padding: 20px 15px;
+    width: 100%;
+  }
+
+  .checkout-form {
+    width: 100%;
+  }
+
+  .checkout-form input,
+  .checkout-form textarea,
+  .checkout-form select {
+    width: 100% !important;
+    margin-bottom: 15px;
+  }
+
+  .buy-box select,
+  .buy-box input,
+  .checkout-form input,
+  .checkout-form textarea {
+    font-size: 16px;
+    padding: 14px 12px;
+    width: 100%;
+  }
+
+  .checkout-form p {
+    margin-bottom: 15px;
+    display: block !important;
+  }
+
+  .checkout-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 13px;
+  }
+
+  .cart-table {
+    font-size: 12px;
+  }
+
+  .cart-table th,
+  .cart-table td {
+    padding: 10px 5px;
   }
 }
