@@ -72,3 +72,6 @@ def checkout(request):
 
 def order_success(request, order_id):
     return render(request,'store/order_success.html',{'order_id':order_id})
+
+def about(request):
+    return render(request, 'store/about.html')
