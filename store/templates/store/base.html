@@ -9,7 +9,7 @@
 </head><body>
 <header class="site-header">
   <a class="brand" href="{% url 'store:home' %}">ZYMAYA</a>
-  <nav class="nav"><a href="{% url 'store:home' %}">Home</a><a href="{% url 'store:product_list' %}">Shop</a><a href="{% url 'store:about' %}">About Us</a></nav>
+  <nav class="nav"><a href="{% url 'store:home' %}">Home</a><a href="{% url 'store:product_list' %}">Shop</a><a href="{% url 'store:about' %}">About Us</a><a href="{% url 'store:contact' %}">Contact Us</a></nav>
   <div class="header-actions">
     <button class="search-icon" type="button"><i class="fas fa-search"></i></button>
     <a class="cart-link" href="{% url 'store:cart_detail' %}"><i class="fas fa-shopping-basket"></i><span>{{ cart|length }}</span></a>

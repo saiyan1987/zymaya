@@ -75,3 +75,6 @@ def order_success(request, order_id):
 
 def about(request):
     return render(request, 'store/about.html')
+
+def contact(request):
+    return render(request, 'store/contact.html')
